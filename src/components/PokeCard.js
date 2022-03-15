@@ -7,6 +7,8 @@ const PokeCard = (props) => {
   const [shinyURL, setShinyURL] = useState("");
 
   // 2 parameters
+  // runs when component loads up
+  // second value is checked things
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon/" + props.pokemon)
       .then((res) => res.json())
@@ -16,7 +18,7 @@ const PokeCard = (props) => {
         setShinyURL(res.sprites.front_shiny);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [props.pokemon]);
 
   const onClickHandler = () => {
     console.log("Fetch Info");
@@ -24,7 +26,7 @@ const PokeCard = (props) => {
 
   return (
     <div className="poke-card">
-      <h1>TEST </h1>
+      <h1>Pokemon</h1>
       <img src={defaultURL} alt={props.pokemon} />
       <h2>{props.pokemon}</h2>
     </div>
