@@ -1,10 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import PokeCard from "./components/PokeCard";
 
 function App() {
   return (
-    <div className="App">
-      <h1>TEST </h1>
+    <div>
+      <PokeCard pokemon="pikachu" />
     </div>
   );
 }
